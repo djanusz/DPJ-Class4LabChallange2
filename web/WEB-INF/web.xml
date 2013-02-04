@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>RectangleCalculatorController</servlet-name>
+        <servlet-class>Challenge2.RectangleCalculatorController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CircleCalculatorController</servlet-name>
+        <servlet-class>Challenge2.CircleCalculatorController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PythagoreanTheoremCalculatorController</servlet-name>
+        <servlet-class>Challenge2.PythagoreanTheoremCalculatorController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RectangleCalculatorController</servlet-name>
+        <url-pattern>/RectangleCalculatorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CircleCalculatorController</servlet-name>
+        <url-pattern>/CircleCalculatorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PythagoreanTheoremCalculatorController</servlet-name>
+        <url-pattern>/PythagoreanTheoremCalculatorController</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>calculator2.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
