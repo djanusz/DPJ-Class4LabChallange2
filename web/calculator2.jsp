@@ -20,7 +20,8 @@
                 if (isNaN(length)&& parseFloat(length)<0 && isNaN(width)&& parseFloat(width)<0)
                 {
                     alert("Please enter a positive number");
-                } else {
+                } 
+                else {
                     isValid = true;
                 }
                 return isValid;
@@ -59,7 +60,7 @@
     </head>
     <body>
         <h1>Area Calculator!</h1>
-        <form id="rectangle" name="rectangle" method="POST" action="RectangleAreaCalculatorController" onsubmit="return validateRectangle">
+        <form id="rectangle" name="rectangle" method="POST" action="RectangleCalculatorController" onsubmit="return validateRectangle">
             <div>
                 <h3>Rectangle</h3>
                 Length: <input type="text" name="length"><br>
@@ -69,7 +70,7 @@
             </div>
         </form>
         <hr>
-        <form id="circle" name="circle" method="POST" action="CircleAreaCalculatorController" onsubmit="return validateCirlce">
+        <form id="circle" name="circle" method="POST" action="CircleCalculatorController" onsubmit="return validateCirlce">
             <div>
                 <h3>Circle</h3>
                 Radius: <input type="text" name="radius"><br>

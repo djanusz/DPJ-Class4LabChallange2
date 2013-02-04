@@ -42,6 +42,8 @@ public class RectangleCalculatorController extends HttpServlet {
         
         double area = rect.getArea(length, width);
         
+        request.setAttribute("area", area);
+        
         RequestDispatcher dispatcher = 
                 getServletContext().getRequestDispatcher(destination);
               dispatcher.forward(request, response);  
