@@ -9,68 +9,92 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        
+        <title>Area Calculator</title>
+
         <script type="text/javascript">
+            msg = "Please enter a positive number"
             function validateRectangle()
             {
+                
                 var length=document.forms["rectangle"]["length"].value;
                 var width=document.forms["rectangle"]["width"].value;
                 var isValid=false;
-                if (isNaN(length)&& parseFloat(length)<0 && isNaN(width)&& parseFloat(width)<0)
-                {
-                    alert("Please enter a positive number");
-                } 
-                else {
-                    isValid = true;
+                if (length != null || length != "" || width != null || width != "") {
+                    if (isNaN(length)|| length<0 || isNaN(width)|| width<0)
+                    {
+                        alert(msg);
+                    } else {
+                        isValid = true;
+                    }
+                    return isValid;
+                } else {
+                    alert(msg);
                 }
+                
                 return isValid;
             }
             
-            function validateCircle()
-            {
-                var radius=document.forms["circle"]["radius"].value;
-                var isValid=false;
-                if (isNaN(radius)&& parseFloat(radius)<0)
+                function validateCircle()
                 {
-                    alert("Please enter a positive number");
+                    var radius=document.forms["circle"]["radius"].value;
+                    var isValid=false;
+                    if (radius != null || length !="") {   
+                        if (isNaN(radius)|| parseFloat(radius)<0)
+                        {
+                            alert(msg);
                     
-                } else {
-                    isValid = true;
+                        } else {
+                            isValid = true;
+                        }
+                        return isValid;
+                    } else {
+                        alert(msg);
+                    }  
+                    return isValid;
                 }
-                return isValid;
-            }
             
-            function validateTriangle()
-            {
-                var legA=document.forms["pythagorean"]["legA"].value;
-                var legB=document.forms["pythagorean"]["legB"].value;
-                var isValid=false;
-                if (isNaN(legA)&& parseFloat(legA)<0 && isNaN(legB)&& parseFloat(legB)<0)
+                function validateTriangle()
                 {
-                    alert("Please enter a positive number");
+                    var legA=document.pythagorean.legA.value;
+                    var legB=document.pythagorean.legB.value;
+                    var isValid=false;
+                    if (legA != null || legA != "" || legB != null || legB != "") {
+                        if (isNaN(legA)|| parseFloat(legA)<0 && isNaN(legB)|| parseFloat(legB)<0)
+                        {
+                            alert(msg);
                     
-                } else {
-                    isValid = true;
+                        } else {
+                            isValid = true;
+                        }
+                        return isValid;
+                    } else{
+                        alert(msg);
+                    }
+                    return isValid;
                 }
-                return isValid;
-            }
             
         </script>
     </head>
     <body>
         <h1>Area Calculator!</h1>
-        <form id="rectangle" name="rectangle" method="POST" action="RectangleCalculatorController" onsubmit="return validateRectangle">
+        <form id="rectangle" name="rectangle" method="POST" action="RectangleCalculatorController" onsubmit="return validateRectangle();">
             <div>
                 <h3>Rectangle</h3>
                 Length: <input type="text" name="length"><br>
                 Width: <input type="text" name="width"><br><br>
                 <input id="rectangleSubmit" name="rectangleSubmit" type="submit" value="Submit">
                 <br><br>
+                
             </div>
         </form>
+        <%
+                    Object oArea = request.getAttribute("area");
+                    if (oArea != null){
+                        out.print("<h2>The area of the rectangle is: "+ oArea + "</h2>");
+                    }
+                %>
         <hr>
-        <form id="circle" name="circle" method="POST" action="CircleCalculatorController" onsubmit="return validateCirlce">
+        <form id="circle" name="circle" method="POST" action="CircleCalculatorController" onsubmit="return validateCirlce();">
             <div>
                 <h3>Circle</h3>
                 Radius: <input type="text" name="radius"><br>
@@ -81,7 +105,7 @@
         </form>
         <hr>
         <h1>Pythagorean Theorem</h1>
-        <form id="pythagorean" name="pythagorean" method="POST" action="PythagoreanTheoremCalculatorController" onsubmit="return validateTriangle">
+        <form id="pythagorean" name="pythagorean" method="POST" action="PythagoreanTheoremCalculatorController" onsubmit="return validateTriangle();">
             <div>
                 <h3>Right Triangle</h3>
                 Leg "a": <input type="text" name="legA"><br>
