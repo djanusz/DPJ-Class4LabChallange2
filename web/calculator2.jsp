@@ -88,9 +88,9 @@
             </div>
         </form>
         <%
-                    Object oArea = request.getAttribute("area");
-                    if (oArea != null){
-                        out.print("<h2>The area of the rectangle is: "+ oArea + "</h2>");
+                    Object rectangleArea = request.getAttribute("area");
+                    if (rectangleArea != null){
+                        out.print("<h2>The area of the rectangle is: "+ rectangleArea + "</h2>");
                     }
                 %>
         <hr>
@@ -103,6 +103,12 @@
                 <br><br>
             </div>
         </form>
+        <%
+                    Object circleArea = request.getAttribute("area");
+                    if (circleArea != null){
+                        out.print("<h2>The area of the circle is: "+ circleArea + "</h2>");
+                    }
+                %>
         <hr>
         <h1>Pythagorean Theorem</h1>
         <form id="pythagorean" name="pythagorean" method="POST" action="PythagoreanTheoremCalculatorController" onsubmit="return validateTriangle();">
@@ -113,5 +119,11 @@
                 <input id="pythagoreanSubmit" name="pythagoreanSubmit" type="submit" value="Submit">
             </div>
         </form>
+        <%
+                    Object hypotenuse = request.getAttribute("hypotenuse");
+                    if (circleArea != null){
+                        out.print("<h2>The hypotenuse of the triangle is: "+ hypotenuse + "</h2>");
+                    }
+                %>
     </body>
 </html>
