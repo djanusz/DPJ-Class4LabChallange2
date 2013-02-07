@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author David
  */
 public class PythagoreanTheoremCalculatorController extends HttpServlet {
-    private static final String destination = "/pythagoreanTheoremJSP.jsp";
+    private static final String destination = "/calculator2.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and

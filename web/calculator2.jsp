@@ -104,7 +104,7 @@
             </div>
         </form>
         <%
-                    Object circleArea = request.getAttribute("area");
+                    Object circleArea = request.getAttribute("circleArea");
                     if (circleArea != null){
                         out.print("<h2>The area of the circle is: "+ circleArea + "</h2>");
                     }
@@ -121,7 +121,7 @@
         </form>
         <%
                     Object hypotenuse = request.getAttribute("hypotenuse");
-                    if (circleArea != null){
+                    if (hypotenuse != null){
                         out.print("<h2>The hypotenuse of the triangle is: "+ hypotenuse + "</h2>");
                     }
                 %>

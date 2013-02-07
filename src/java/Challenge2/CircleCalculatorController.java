@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author David
  */
 public class CircleCalculatorController extends HttpServlet {
-       private static final String destination = "/circleArea.jsp";
+       private static final String destination = "/calculator2.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -38,9 +38,9 @@ public class CircleCalculatorController extends HttpServlet {
         
         CircleModel circle = new CircleModel();
         
-        double area = circle.getArea(radius);
+        double circleArea = circle.getArea(radius);
         
-        request.setAttribute("area", area);
+        request.setAttribute("circleArea", circleArea);
         
         RequestDispatcher dispatcher = 
                 getServletContext().getRequestDispatcher(destination);
