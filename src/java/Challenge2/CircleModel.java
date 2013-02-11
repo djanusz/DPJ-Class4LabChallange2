@@ -1,16 +1,18 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Challenge2;
 
 /**
  *
- * @author David
+ * @author David Janusz
  */
 public class CircleModel {
     
     public double getArea(double radius) {
+        if (radius <= 0 ) {
+            throw new IllegalArgumentException("Value must be greater "
+                    + "than zero!");
+        } 
+                
         double area = Math.PI * radius * radius;
         return area;
     }
