@@ -1,7 +1,7 @@
 <%-- 
     Document   : calculator2
     Created on : Feb 3, 2013, 2:35:42 PM
-    Author     : David
+    Author     : David Janusz
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -39,7 +39,7 @@
                     var radius=document.forms["circle"]["radius"].value;
                     var isValid=false;
                     if (radius != null || length !="") {   
-                        if (isNaN(radius)|| parseFloat(radius)<0)
+                        if (isNaN(radius)|| radius<0)
                         {
                             alert(msg);
                     
@@ -80,8 +80,8 @@
         <form id="rectangle" name="rectangle" method="POST" action="RectangleCalculatorController" onsubmit="return validateRectangle();">
             <div>
                 <h3>Rectangle</h3>
-                Length: <input type="text" name="length"><br>
-                Width: <input type="text" name="width"><br><br>
+                Length: <input type="text" name="length" value='<%= request.getParameter("length")%>'><br>
+                Width: <input type="text" name="width" value='<%= request.getParameter("width")%>'><br><br>
                 <input id="rectangleSubmit" name="rectangleSubmit" type="submit" value="Submit">
                 <br><br>
                 
@@ -94,10 +94,10 @@
                     }
                 %>
         <hr>
-        <form id="circle" name="circle" method="POST" action="CircleCalculatorController" onsubmit="return validateCirlce();">
+        <form id="circle" name="circle" method="POST" action="CircleCalculatorController" onsubmit="return validateCircle();">
             <div>
                 <h3>Circle</h3>
-                Radius: <input type="text" name="radius"><br>
+                Radius: <input type="text" name="radius" value='<%= request.getParameter("radius")%>'><br>
                 <br>
                 <input id="circleSubmit" name="circleSubmit" type="submit" value="Submit">
                 <br><br>
@@ -114,8 +114,8 @@
         <form id="pythagorean" name="pythagorean" method="POST" action="PythagoreanTheoremCalculatorController" onsubmit="return validateTriangle();">
             <div>
                 <h3>Right Triangle</h3>
-                Leg "a": <input type="text" name="legA"><br>
-                Leg "b": <input type="text" name="legB"><br><br>
+                Leg "a": <input type="text" name="legA" value='<%= request.getParameter("legA")%>'><br>
+                Leg "b": <input type="text" name="legB" value='<%= request.getParameter("legB")%>'><br><br>
                 <input id="pythagoreanSubmit" name="pythagoreanSubmit" type="submit" value="Submit">
             </div>
         </form>
