@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Challenge2;
 
 import java.io.IOException;
@@ -13,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author David
+ * Description: This class controls communication between the jsp(view) and the 
+ * appropriate model object.
+ * 
+ * @author David Janusz
  */
-public class PythagoreanTheoremCalculatorController extends HttpServlet {
+public class RightTriangleCalculatorController extends HttpServlet {
     private static final String destination = "/calculator2.jsp";
     /**
      * Processes requests for both HTTP
@@ -37,8 +36,11 @@ public class PythagoreanTheoremCalculatorController extends HttpServlet {
         String strLegB = request.getParameter("legB");
         double legA = Double.valueOf(strLegA);
         double legB = Double.valueOf(strLegB);
-        double hypotenuseSquared = (legA * legA) + (legB * legB);
-        double hypotenuse = Math.sqrt(hypotenuseSquared);
+        
+        RightTriangleModel triangle = new RightTriangleModel();
+        
+        
+        double hypotenuse = triangle.getHypotenuse(legA, legB);
         
         request.setAttribute("hypotenuse", hypotenuse);
         

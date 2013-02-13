@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Challenge2;
 
 import java.io.IOException;
@@ -13,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author David
+ * Description: This class controls communication between the jsp(view) and the 
+ * appropriate model object.
+ * 
+ * @author David Janusz
  */
 public class CircleCalculatorController extends HttpServlet {
        private static final String destination = "/calculator2.jsp";

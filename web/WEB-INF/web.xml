@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>PythagoreanTheoremCalculatorController</servlet-name>
-        <servlet-class>Challenge2.PythagoreanTheoremCalculatorController</servlet-class>
+        <servlet-class>Challenge2.RightTriangleCalculatorController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RectangleCalculatorController</servlet-name>
@@ -30,8 +30,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        
         <welcome-file>calculator2.jsp</welcome-file>
-        
     </welcome-file-list>
 </web-app>
